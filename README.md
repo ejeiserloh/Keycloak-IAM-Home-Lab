@@ -1,15 +1,20 @@
-# 🔐 Keycloak IAM Homelab (SSO, MFA, LDAP, RBAC)
+# 🔐 Enterprise IAM Homelab with Keycloak, Grafana, and LLDAP
 
 ## 📌 Overview
-This project demonstrates enterprise Identity and Access Management (IAM) concepts using Keycloak as the Identity Provider (IdP) and Grafana as a relying application.
 
-It simulates real-world authentication and authorization flows including:
+This project implements a full Identity and Access Management (IAM) lab using:
 
-- Single Sign-On (SSO) using OpenID Connect (OIDC)
-- Multi-Factor Authentication (MFA) with TOTP
-- LDAP Federation (external identity source)
+- Keycloak as the Identity Provider (IdP)
+- Grafana as a relying party (application)
+- LLDAP as an external directory (identity source)
+
+It demonstrates real-world IAM architecture patterns including:
+
+- Single Sign-On (SSO) via OpenID Connect (OIDC)
+- Multi-Factor Authentication (MFA) using TOTP
+- Identity Federation (LDAP → Keycloak)
 - Role-Based Access Control (RBAC)
-- Token-based API authentication using JWT
+- Token-based API authentication (JWT)
 
 ---
 
@@ -17,92 +22,66 @@ It simulates real-world authentication and authorization flows including:
 
 ![Architecture Diagram](architecture/architecture-diagram.png)
 
-User → Browser → Keycloak (IdP) → Grafana (App)
-                         ↕
-                      OpenLDAP
+User → Browser → Keycloak → Grafana  
+                      ↕  
+                   LLDAP  
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Quick Start
 
-- Keycloak
-- Grafana
-- LLDAP 
-- Docker / Docker Compose
-- OpenID Connect (OIDC)
+git clone https://github.com/YOUR_USERNAME/keycloak-iam-homelab.git  
+cd keycloak-iam-homelab  
+docker-compose up -d  
 
 ---
 
-## 🔐 Keycloak Configuration
+## 🔐 Keycloak Setup
 
-- Realm: corp
-- Roles: admin, user, viewer
-- Users:
-  - admin1 → admin
-  - user1 → user
+- Realm: corp  
+- Roles: admin, user, viewer  
 
 ---
 
-## 🔑 Grafana SSO Config (Environment)
+## 👥 LLDAP Setup
 
-GF_AUTH_GENERIC_OAUTH_ENABLED=true
-GF_AUTH_GENERIC_OAUTH_NAME=Keycloak
-GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP=true
-GF_AUTH_GENERIC_OAUTH_CLIENT_ID=grafana
-GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET=YOUR_CLIENT_SECRET
-GF_AUTH_GENERIC_OAUTH_SCOPES=openid profile email
-GF_AUTH_GENERIC_OAUTH_AUTH_URL=http://localhost:8080/realms/corp/protocol/openid-connect/auth
-GF_AUTH_GENERIC_OAUTH_TOKEN_URL=http://localhost:8080/realms/corp/protocol/openid-connect/token
-GF_AUTH_GENERIC_OAUTH_API_URL=http://localhost:8080/realms/corp/protocol/openid-connect/userinfo
+- URL: http://localhost:17170  
+- Login: admin / admin  
+
+Create users:
+- user1 / password  
+- admin1 / password  
 
 ---
 
-## 🔁 SSO Flow
+## 🔗 LDAP Federation
 
-1. User logs in via Keycloak
-2. Redirect back to Grafana
-3. Session established
-
----
-
-## 🔐 MFA
-
-- OTP required on login
-- QR code enrollment via authenticator app
+Connection URL: ldap://lldap:3890  
+Bind DN: uid=admin,ou=people,dc=homelab,dc=local  
+Users DN: ou=people,dc=homelab,dc=local  
 
 ---
 
-## 🧬 LDAP Federation
+## 🔑 Grafana SSO Config
 
-- LLDAP as identity source
-- Users synced into Keycloak
-
----
-
-## 🎟️ Token Example
-
-{
-  "sub": "user1",
-  "realm_access": {
-    "roles": ["user"]
-  }
-}
+GF_AUTH_GENERIC_OAUTH_ENABLED=true  
+GF_AUTH_GENERIC_OAUTH_CLIENT_ID=grafana  
+GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET=YOUR_SECRET  
 
 ---
 
-## 🛡️ RBAC Mapping
+## 🛡️ RBAC
 
-ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
+GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
 
 ---
 
-## ⚠️ Common Issues
+## 📸 Screenshots
 
-Redirect URI must include:
-http://localhost:3000/*
-
-RBAC issues:
-- Ensure roles exist in token
-- Ensure mapping is correct
+Add screenshots in:
+- screenshots/sso/
+- screenshots/mfa/
+- screenshots/ldap/
+- screenshots/rbac/
 
 ---
