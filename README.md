@@ -64,7 +64,7 @@ GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET=YOUR_SECRET
 
 ## 🛡️ RBAC
 
-GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
+ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
 
 ---
 
