@@ -27,25 +27,9 @@ User → Browser → Keycloak (IdP) → Grafana (App)
 
 - Keycloak
 - Grafana
-- OpenLDAP
+- LLDAP 
 - Docker / Docker Compose
 - OpenID Connect (OIDC)
-
----
-
-## 🚀 Setup
-
-### 1. Clone Repository
-git clone https://github.com/YOUR_USERNAME/keycloak-iam-homelab.git
-cd keycloak-iam-homelab/docker
-
-### 2. Start Services
-docker-compose up -d
-
-### 3. Access Services
-
-- Keycloak: http://localhost:8080
-- Grafana: http://localhost:3000
 
 ---
 
@@ -90,7 +74,7 @@ GF_AUTH_GENERIC_OAUTH_API_URL=http://localhost:8080/realms/corp/protocol/openid-
 
 ## 🧬 LDAP Federation
 
-- OpenLDAP as identity source
+- LLDAP as identity source
 - Users synced into Keycloak
 
 ---
@@ -108,7 +92,7 @@ GF_AUTH_GENERIC_OAUTH_API_URL=http://localhost:8080/realms/corp/protocol/openid-
 
 ## 🛡️ RBAC Mapping
 
-GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
+ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
 
 ---
 
