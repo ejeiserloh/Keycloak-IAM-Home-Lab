@@ -1,4 +1,4 @@
-# 🔐 Enterprise IAM Homelab with Keycloak, Grafana, and LLDAP
+# 🔐 Enterprise IAM Homelab 
 
 ## 📌 Overview
 
