@@ -28,14 +28,6 @@ User → Browser → Keycloak → Grafana
 
 ---
 
-## 🚀 Quick Start
-
-git clone https://github.com/YOUR_USERNAME/keycloak-iam-homelab.git  
-cd keycloak-iam-homelab  
-docker-compose up -d  
-
----
-
 ## 🔐 Keycloak Setup
 
 - Realm: corp  
