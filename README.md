@@ -20,7 +20,7 @@ It demonstrates real-world IAM architecture patterns including:
 
 ## 🧱 Architecture
 
-![Architecture Diagram](architecture/architecture-diagram.png)
+![Architecture Diagram](screenshots/architecture.png)
 
 User → Browser → Keycloak → Grafana  
                       ↕  
@@ -70,7 +70,6 @@ ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || conta
 
 ## 📸 Screenshots
 
-Add screenshots in:
 - screenshots/sso/
 - screenshots/mfa/
 - screenshots/ldap/
