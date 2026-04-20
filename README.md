@@ -49,7 +49,11 @@ Users DN: ou=people,dc=homelab,dc=local
 
 ## 🛡️ RBAC
 
-ROLE_ATTRIBUTE_PATH=contains(realm_access.roles[*], 'admin') && 'Admin' || contains(realm_access.roles[*], 'user') && 'Editor' || 'Viewer'
+![Alt Text](screenshots/rbac1.png) 
+![Alt Text](screenshots/rbac2.png) 
+![Alt Text](screenshots/rbac3.png) 
+
+
 
 ---
 
