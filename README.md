@@ -43,13 +43,13 @@ Users DN: ou=people,dc=homelab,dc=local
 ## 🔑 Grafana SSO
 
 ![Alt Text](screenshots/sso.png) 
+![Alt Text](screenshots/rbac1.png) 
  
 
 ---
 
 ## 🛡️ RBAC
 
-![Alt Text](screenshots/rbac1.png) 
 ![Alt Text](screenshots/rbac2.png) 
 ![Alt Text](screenshots/rbac3.png) 
 
