@@ -20,9 +20,6 @@ It demonstrates real-world IAM architecture patterns including:
 
 ## 🔐 Keycloak Setup
 
-- Realm: corp  
-- Roles: admin, user, viewer
-
 ![Alt Text](screenshots/realm.png)
 ![Alt Text](screenshots/roles.png) 
 
