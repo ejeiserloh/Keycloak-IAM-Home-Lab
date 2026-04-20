@@ -40,11 +40,10 @@ Users DN: ou=people,dc=homelab,dc=local
 
 ---
 
-## 🔑 Grafana SSO Config
+## 🔑 Grafana SSO
 
-AUTH_GENERIC_OAUTH_ENABLED=true  
-AUTH_GENERIC_OAUTH_CLIENT_ID=grafana  
-AUTH_GENERIC_OAUTH_CLIENT_SECRET=YOUR_SECRET  
+![Alt Text](screenshots/sso.png) 
+ 
 
 ---
 
