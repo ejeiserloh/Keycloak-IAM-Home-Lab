@@ -34,9 +34,8 @@ It demonstrates real-world IAM architecture patterns including:
 
 ## 🔗 LDAP Federation
 
-Connection URL: ldap://lldap:3890  
-Bind DN: uid=admin,ou=people,dc=homelab,dc=local  
-Users DN: ou=people,dc=homelab,dc=local  
+![Alt Text](screenshots/federation1.png) 
+![Alt Text](screenshots/federation2.png) 
 
 ---
 
