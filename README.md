@@ -55,13 +55,3 @@ Users DN: ou=people,dc=homelab,dc=local
 
 
 
----
-
-## 📸 Screenshots
-
-- screenshots/sso/
-- screenshots/mfa/
-- screenshots/ldap/
-- screenshots/rbac/
-
----
