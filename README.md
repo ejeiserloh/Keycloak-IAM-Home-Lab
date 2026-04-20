@@ -48,9 +48,8 @@ Attribute and group mappers configured as part of the LDAP federation. These map
 ## 🔑 Grafana SSO
 
 ![Alt Text](screenshots/sso.png)
-Grafana configured as an OIDC client (relying party) in Keycloak. This demonstrates a complete SSO flow—users who authenticate via Keycloak are issued a JWT, which Grafana validates to establish a session without requiring a separate login.
 ![Alt Text](screenshots/rbac1.png) 
-The Keycloak client scope and role mapping configuration that ties Keycloak realm roles to Grafana's internal role system. This is the bridge between identity (who you are) and authorization (what you can do) within the application. 
+Grafana configured as an OIDC client (relying party) in Keycloak. This demonstrates a complete SSO flow—users who authenticate via Keycloak are issued a JWT, which Grafana validates to establish a session without requiring a separate login.
 
 ---
 
