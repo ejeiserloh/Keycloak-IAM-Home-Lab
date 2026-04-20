@@ -18,20 +18,13 @@ It demonstrates real-world IAM architecture patterns including:
 
 ---
 
-## 🧱 Architecture
-
-![Architecture Diagram](screenshots/architecture.png)
-
-User → Browser → Keycloak → Grafana  
-                      ↕  
-                   LLDAP  
-
----
-
 ## 🔐 Keycloak Setup
 
 - Realm: corp  
-- Roles: admin, user, viewer  
+- Roles: admin, user, viewer
+
+![Alt Text](screenshots/realm.png)
+![Alt Text](screenshots/roles.png) 
 
 ---
 
