@@ -27,12 +27,8 @@ It demonstrates real-world IAM architecture patterns including:
 
 ## 👥 LLDAP Setup
 
-- URL: http://localhost:17170  
-- Login: admin / admin  
-
-Create users:
-- user1 / password  
-- admin1 / password  
+![Alt Text](screenshots/ldapusers.png) 
+![Alt Text](screenshots/ldapgroups.png) 
 
 ---
 
